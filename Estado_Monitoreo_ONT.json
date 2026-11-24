@@ -1,0 +1,11 @@
+{
+  "fecha_ejecucion": "2026-11-23T19:08:03-06:00",
+  "fecha_base": "2026-11-23",
+  "total_fuentes": 75,
+  "capturas_nuevas": 0,
+  "no_verificables": 0,
+  "omitidas_por_duplicado": 75,
+  "observaciones_acumuladas": 75,
+  "estatus": "SIN_CAMBIOS",
+  "nota": "Los precios antiguos pueden estar desactualizados; no se rellenan datos fallidos"
+}
