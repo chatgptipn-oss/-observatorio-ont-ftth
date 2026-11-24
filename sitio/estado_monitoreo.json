@@ -1,0 +1,10 @@
+{
+  "fecha_ejecucion": null,
+  "fecha_base": "2026-11-23",
+  "total_fuentes": 75,
+  "capturas_nuevas": 0,
+  "no_verificables": 0,
+  "omitidas_por_duplicado": 0,
+  "observaciones_acumuladas": 75,
+  "estatus": "PENDIENTE_PRIMERA_EJECUCION"
+}

@@ -1,0 +1,58 @@
+[
+  [
+    "SYSCOM",
+    "Catálogo ONT (precios de venta no homogeneizables; MSRP USD + IVA)",
+    "https://betaweb.syscom.mx/categories/66748?lv=3",
+    "Sin precio transaccional MXN comparable",
+    "NO",
+    "Huawei, V-SOL, TP-Link, FiberHome, Mercusys"
+  ],
+  [
+    "Cyberpuerta",
+    "Unidades de Red Óptica",
+    "https://www.cyberpuerta.mx/Computo-Hardware/Redes/Unidades-de-Red-Optica/",
+    "Sin extracción consistente de precio",
+    "NO",
+    "Huawei/FiberHome/TP-Link"
+  ],
+  [
+    "Intercompras",
+    "Categoría GPON/ONT",
+    "https://intercompras.com/c/equipos-red-pon-ont-onu-gpon-3056",
+    "Listado sin precio concreto verificable",
+    "NO",
+    "ONT varias"
+  ],
+  [
+    "CTRL+W",
+    "Categoría ONTs",
+    "https://ctrlw.mx/categoria/onus-onts",
+    "Catálogo localizado; precio no recuperado",
+    "NO",
+    "Varias"
+  ],
+  [
+    "Mercado Libre",
+    "Marketplaces con vendedores terceros",
+    "https://www.mercadolibre.com.mx/",
+    "Sin SKU/condición/IVA uniforme comprobable",
+    "NO",
+    "Diferentes marcas"
+  ],
+  [
+    "Nokia",
+    "Nokia G-1425G-B y otras ONT",
+    "",
+    "No se encontró precio público MXN verificable",
+    "NO",
+    "Nokia"
+  ],
+  [
+    "Huawei XGS-PON",
+    "EN8145B7NS Wifi 7",
+    "https://betaweb.syscom.mx/products/254551",
+    "Modelo confirmado; sin precio publicado comparable",
+    "NO",
+    "Huawei XGS-PON"
+  ]
+]
