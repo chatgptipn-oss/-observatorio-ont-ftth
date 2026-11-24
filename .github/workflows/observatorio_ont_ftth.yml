@@ -1,0 +1,70 @@
+name: ONT FTTH | monitoreo y dashboard semanal
+
+on:
+  schedule:
+    # Lunes a las 09:15 hora Ciudad de México (no requiere PC encendida).
+    - cron: '15 9 * * 1'
+      timezone: 'America/Mexico_City'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: observatorio-ont-ftth
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+      - name: Preparar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Consultar fuentes y crear dashboard
+        run: python Actualizar_ONT_FTTH.py
+      - name: Validar archivos generados
+        run: |
+          test -s Historico_ONT_FTTH_2026.csv
+          test -s sitio/index.html
+          test -s sitio/estado_monitoreo.json
+      - name: Guardar histórico y dashboard en GitHub
+        run: |
+          git config user.name "ONT FTTH Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Historico_ONT_FTTH_2026.csv Log_Actualizaciones_ONT.csv Estado_Monitoreo_ONT.json sitio/
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualización ONT FTTH $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "Sin modificaciones para guardar"
+          fi
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Empaquetar dashboard para publicar
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./sitio
+
+  publicar:
+    needs: actualizar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publicar dashboard en GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
